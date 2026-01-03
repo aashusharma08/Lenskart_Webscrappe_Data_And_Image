@@ -1,36 +1,37 @@
-#🕶️ Lenskart Web Scraper – Python Automation Project
+🕶️ Lenskart Web Scraper – Python Automation Project
 
-A complete web scraping automation project built using Python, Selenium, and BeautifulSoup to extract product data from Lenskart across multiple categories with dynamic scrolling, image downloading, and CSV consolidation.
+A complete end-to-end web scraping project built using Python, Selenium, and BeautifulSoup to extract product data from Lenskart across multiple categories.
+The project handles dynamic infinite scrolling, automatic product count detection, image downloading, and CSV consolidation into a single master dataset.
 
-📌 Project Overview
+This project is designed to demonstrate real-world scraping logic, data handling, and automation skills and is suitable for portfolio and GitHub showcase purposes.
 
-This project automates the extraction of product information from Lenskart’s website, handling:
+📌 Project Highlights
 
-Dynamic infinite scrolling
+Scrapes multiple Lenskart category pages
 
-Multiple category pages
+Automatically detects total product count
 
-Automatic product count detection
+Handles infinite scroll pages
 
-Image downloading
+Extracts structured product data
 
-Structured CSV storage
+Downloads product images safely
 
-Merging multiple category files into one dataset
+Saves category-wise CSV files
 
-The final output is a clean, analytics-ready CSV file containing all scraped products with category tagging.
+Merges all CSVs into one final dataset
 
-🚀 Features
+Adds a clean, non-repeating category column
 
-✅ Scrapes multiple Lenskart categories
+Built with scalable and reusable code
 
-🔄 Handles infinite scroll automatically
+📦 Data Extracted
 
-📦 Extracts:
+For each product, the following information is collected:
 
 Brand Name
 
-Price
+Offer Price
 
 Original Price
 
@@ -40,25 +41,17 @@ Rating
 
 Number of Reviews
 
-Product Link
+Product Page URL
 
 Image URL
 
-🖼️ Downloads product images safely
-
-📂 Saves category-wise CSV files
-
-🔗 Merges all CSVs into one master dataset
-
-🏷️ Adds a clean Category column
-
-🧹 Removes duplicates automatically
+Category Name
 
 🛠️ Tech Stack
 
-Python 3.10+
+Python 3
 
-Selenium
+Selenium WebDriver
 
 BeautifulSoup (bs4)
 
@@ -66,23 +59,28 @@ Pandas
 
 Requests
 
-ChromeDriver
+webdriver-manager
+
+Google Chrome
 
 📁 Project Structure
 Lenskart-Web-Scraper/
 │
 ├── scraper/
 │   ├── lenskart_scraper.py        # Main scraping script
-│   ├── merge_csv.py               # Merge all CSV files
+│   ├── merge_csv.py               # Merge all category CSV files
 │
 ├── output/
+│   ├── lenskart_all-computer-glasses.csv
+│   ├── lenskart_all-kids-eyeglasses.csv
+│   ├── lenskart_bestsellers-premium-eyeglasses.csv
 │   ├── lenskart_eyeglasses.csv
 │   ├── lenskart_sunglasses.csv
-│   ├── lenskart_kids_eyeglasses.csv
 │
 ├── images/
-│   ├── Eyeglasses/
-│   ├── Sunglasses/
+│   ├── all-computer-glasses/
+│   ├── all-kids-eyeglasses/
+│   ├── bestsellers-premium-eyeglasses/
 │
 ├── final_products.csv             # Final merged dataset
 │
@@ -90,92 +88,92 @@ Lenskart-Web-Scraper/
 ├── README.md
 └── .gitignore
 
-⚙️ Installation & Setup
+⚙️ Setup & Installation
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/Lenskart-Web-Scraper.git
+git clone https://github.com/aashu-sharma/Lenskart-Web-Scraper.git
 cd Lenskart-Web-Scraper
 
 2️⃣ Install Dependencies
 pip install -r requirements.txt
 
-3️⃣ Install ChromeDriver
+3️⃣ Chrome & WebDriver
 
-Make sure Google Chrome is installed
+Ensure Google Chrome is installed
 
-ChromeDriver will be handled automatically using webdriver-manager
+ChromeDriver is handled automatically via webdriver-manager
 
-▶️ How to Run
-🔹 Run the Scraper
+▶️ How to Run the Project
+🔹 Step 1: Run the Scraper
 python scraper/lenskart_scraper.py
 
 
 This will:
 
-Open each category page
+Open each Lenskart category page
 
-Scroll dynamically
+Detect total product count
 
-Extract all products
+Perform smart scrolling
+
+Extract all product data
+
+Download images
 
 Save category-wise CSV files
 
-Download product images
-
-🔹 Merge All CSV Files
+🔹 Step 2: Merge All CSV Files
 python scraper/merge_csv.py
 
 
 This will:
 
-Merge all category CSV files
+Merge all category CSVs
 
-Add a clean Category column
+Add a unique category name per product
 
-Save final_products.csv
+Remove duplicates
+
+Generate final_products.csv
 
 📊 Sample Output (final_products.csv)
 Brand	Price	Original Price	Discount	Rating	Reviews	Category
-Vincent Chase	₹999	₹1999	50% OFF	4.5	1,245	Eyeglasses
-Lenskart Air	₹1499	₹2499	40% OFF	4.7	890	Computer Glasses
-⚠️ Important Notes
+Vincent Chase	₹999	₹1999	50% OFF	4.5	1245	Computer Glasses
+Lenskart Air	₹1499	₹2499	40% OFF	4.7	890	Eyeglasses
+John Jacobs	₹1999	₹3499	43% OFF	4.6	560	Kids Eyeglasses
+🧠 Key Concepts Demonstrated
 
-This project is built for educational and learning purposes
+Dynamic content scraping
 
-Avoid aggressive scraping
+Infinite scroll handling
 
-Respect website robots.txt and Terms of Service
+DOM inspection and parsing
 
-Use reasonable delays to prevent IP blocking
+Automation using Selenium
 
-📌 Learning Outcomes
+Error-safe image downloading
 
-Real-world web scraping
+Data cleaning and merging
 
-Handling dynamic content with Selenium
+Scalable scraper design
 
-Infinite scrolling logic
+⚠️ Disclaimer
 
-Data cleaning and structuring
+This project is created strictly for educational and learning purposes.
+Please respect the website’s Terms of Service and avoid excessive requests while scraping.
 
-CSV automation
+🚀 Future Enhancements
 
-File and folder management
+Scrape detailed product specification pages
 
-Production-ready scraping workflow
+Store data in SQL / NoSQL database
 
-🔮 Future Enhancements
+Add logging instead of print statements
 
-🧠 Convert to Scrapy framework
+Headless browser support
 
-🌐 Add proxy & user-agent rotation
+Proxy & user-agent rotation
 
-📦 Store data in SQL / MongoDB
-
-📊 Build a Streamlit dashboard
-
-⏱️ Schedule scraping using cron jobs
-
-☁️ Deploy on cloud (AWS / GCP)
+Build a dashboard using Streamlit
 
 👨‍💻 Author
 
@@ -183,5 +181,6 @@ Aashu Sharma
 Aspiring Financial & Data Analyst
 Python | Data Analytics | Web Automation
 
-📎 LinkedIn: (Add your profile link)
-📁 GitHub: (This repository)
+⭐ Support
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
