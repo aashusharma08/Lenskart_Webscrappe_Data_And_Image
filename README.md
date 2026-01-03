@@ -1,33 +1,81 @@
-🕶️ Lenskart Web Scraper – Python Automation Project
+Lenskart-Web-Scraper – Dynamic Product Data Extraction
 
-A complete end-to-end web scraping project built using Python, Selenium, and BeautifulSoup to extract product data from Lenskart across multiple categories.
-The project handles dynamic infinite scrolling, automatic product count detection, image downloading, and CSV consolidation into a single master dataset.
+aashusharma08/Lenskart-Web-Scraper
 
-This project is designed to demonstrate real-world scraping logic, data handling, and automation skills and is suitable for portfolio and GitHub showcase purposes.
+📌 Project Overview
 
-📌 Project Highlights
+This project is a Python-based web scraping application that extracts product data from Lenskart’s dynamic e-commerce website.
+It uses Selenium to handle infinite scrolling and BeautifulSoup to parse HTML content, enabling structured extraction of product information across multiple categories.
+
+The objective is to demonstrate real-world web scraping of JavaScript-heavy websites, automated data collection, and dataset consolidation.
+
+📂 Features
 
 Scrapes multiple Lenskart category pages
 
-Automatically detects total product count
+Dynamically detects total product count per page
 
-Handles infinite scroll pages
+Handles infinite scrolling efficiently
 
-Extracts structured product data
+Extracts structured product-level data
 
 Downloads product images safely
 
 Saves category-wise CSV files
 
-Merges all CSVs into one final dataset
+Merges all category data into a single CSV
 
-Adds a clean, non-repeating category column
+Adds a clean and unique category column
 
-Built with scalable and reusable code
+🛠️ Technologies Used
 
-📦 Data Extracted
+Python – Core programming language
 
-For each product, the following information is collected:
+Selenium – Browser automation and dynamic content handling
+
+BeautifulSoup (bs4) – HTML parsing
+
+pandas – Data manipulation and CSV merging
+
+requests – Image downloading
+
+webdriver-manager – Automatic ChromeDriver management
+
+📥 Installation
+
+Ensure Python is installed (Python 3.10+ recommended).
+Install the required libraries:
+
+pip install selenium beautifulsoup4 pandas requests webdriver-manager
+
+📌 Usage
+Step 1: Run the Web Scraper
+python lenskart_scraper.py
+
+
+This script:
+
+Opens each Lenskart category page
+
+Detects the total number of products
+
+Performs smart scrolling
+
+Extracts product details
+
+Downloads images
+
+Saves category-wise CSV files
+
+Step 2: Merge All CSV Files
+python merge_csv.py
+
+
+This creates a single consolidated dataset (final_products.csv) with an additional Category column.
+
+📊 Data Extracted
+
+Each product record includes:
 
 Brand Name
 
@@ -41,146 +89,39 @@ Rating
 
 Number of Reviews
 
-Product Page URL
+Product URL
 
 Image URL
 
 Category Name
 
-🛠️ Tech Stack
+📌 Sample Output
+Brand	Price	Discount	Rating	Category
+Vincent Chase	₹999	50% OFF	4.5	Computer Glasses
+Lenskart Air	₹1499	40% OFF	4.7	Eyeglasses
+John Jacobs	₹1999	43% OFF	4.6	Kids Eyeglasses
+📌 Learning Outcomes
 
-Python 3
+Scraping JavaScript-rendered websites
 
-Selenium WebDriver
+Handling infinite scroll logic
 
-BeautifulSoup (bs4)
+Working with dynamic DOM elements
 
-Pandas
+Data cleaning and consolidation
 
-Requests
+Building scalable scraping pipelines
 
-webdriver-manager
+📌 Contribution
 
-Google Chrome
+Contributions are welcome.
+Fork the repository, make improvements, and submit a pull request.
 
-📁 Project Structure
-Lenskart-Web-Scraper/
-│
-├── scraper/
-│   ├── lenskart_scraper.py        # Main scraping script
-│   ├── merge_csv.py               # Merge all category CSV files
-│
-├── output/
-│   ├── lenskart_all-computer-glasses.csv
-│   ├── lenskart_all-kids-eyeglasses.csv
-│   ├── lenskart_bestsellers-premium-eyeglasses.csv
-│   ├── lenskart_eyeglasses.csv
-│   ├── lenskart_sunglasses.csv
-│
-├── images/
-│   ├── all-computer-glasses/
-│   ├── all-kids-eyeglasses/
-│   ├── bestsellers-premium-eyeglasses/
-│
-├── final_products.csv             # Final merged dataset
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
+📜 License
 
-⚙️ Setup & Installation
-1️⃣ Clone the Repository
-git clone https://github.com/aashusharma08/Lenskart-Web-Scraper.git
-cd Lenskart-Web-Scraper
+This project is open-source and available under the MIT License.
 
-2️⃣ Install Dependencies
-pip install -r requirements.txt
+📧 Contact
 
-3️⃣ Chrome & WebDriver
-
-Ensure Google Chrome is installed
-
-ChromeDriver is handled automatically via webdriver-manager
-
-▶️ How to Run the Project
-🔹 Step 1: Run the Scraper
-python scraper/lenskart_scraper.py
-
-
-This will:
-
-Open each Lenskart category page
-
-Detect total product count
-
-Perform smart scrolling
-
-Extract all product data
-
-Download images
-
-Save category-wise CSV files
-
-🔹 Step 2: Merge All CSV Files
-python scraper/merge_csv.py
-
-
-This will:
-
-Merge all category CSVs
-
-Add a unique category name per product
-
-Remove duplicates
-
-Generate final_products.csv
-
-📊 Sample Output (final_products.csv)
-Brand	Price	Original Price	Discount	Rating	Reviews	Category
-Vincent Chase	₹999	₹1999	50% OFF	4.5	1245	Computer Glasses
-Lenskart Air	₹1499	₹2499	40% OFF	4.7	890	Eyeglasses
-John Jacobs	₹1999	₹3499	43% OFF	4.6	560	Kids Eyeglasses
-🧠 Key Concepts Demonstrated
-
-Dynamic content scraping
-
-Infinite scroll handling
-
-DOM inspection and parsing
-
-Automation using Selenium
-
-Error-safe image downloading
-
-Data cleaning and merging
-
-Scalable scraper design
-
-⚠️ Disclaimer
-
-This project is created strictly for educational and learning purposes.
-Please respect the website’s Terms of Service and avoid excessive requests while scraping.
-
-🚀 Future Enhancements
-
-Scrape detailed product specification pages
-
-Store data in SQL / NoSQL database
-
-Add logging instead of print statements
-
-Headless browser support
-
-Proxy & user-agent rotation
-
-Build a dashboard using Streamlit
-
-👨‍💻 Author
-
-Aashu Sharma
-Aspiring Financial & Data Analyst
-Python | Data Analytics | Web Automation
-
-⭐ Support
-
-If you find this project useful, consider giving it a ⭐ on GitHub.
+For queries or collaboration, reach out via GitHub
+or email: aaashu51767@gmail.com
