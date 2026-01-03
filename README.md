@@ -90,7 +90,7 @@ Lenskart-Web-Scraper/
 
 ⚙️ Setup & Installation
 1️⃣ Clone the Repository
-git clone https://github.com/aashu-sharma/Lenskart-Web-Scraper.git
+git clone https://github.com/aashusharma08/Lenskart-Web-Scraper.git
 cd Lenskart-Web-Scraper
 
 2️⃣ Install Dependencies
